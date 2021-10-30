@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Profil</title>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script>
+			function createCookie(name, value, days) {
+    var expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
+}
+    
+    var temp = getCookie('name'); 
+    $(document).ready(function() {
+        $('body').css("background-color", temp);
+            if(temp == 'white'){
+        	$('.kiri').css("background-color","pink");
+        	$('.kiri').css("color","black");
+        	$('nav').css("background-color", "black");
+        	$('nav').css("color","black");
+        	$('.kanan').css("background-color","#d6e0f0");
+        	$('.kanan').css("color","black");
+        	$('header').css("background-color","aqua");
+        	$('header').css("color","black");
+        	$('.tengah').css("background-color","white");
+        	$('.tengah').css("color","black");
+        	$('footer').css("background-color","chartreuse");
+        	$('footer').css("color","black");
+     
+        }else{
+        	$('.kiri').css("background-color","grey");
+        	$('.kiri').css("color","white");
+        	$('nav').css("background-color", "black");
+        	$('nav').css("color","white");
+        	$('.kanan').css("background-color","grey");
+        	$('.kanan').css("color","white");
+        	$('header').css("background-color","grey");
+        	$('header').css("color","white");
+        	$('.tengah').css("background-color","black");
+        	$('.tengah').css("color","white");
+        	$('footer').css("background-color","black");
+        	$('footer').css("color","white");
+
+       
+        }
+        $("input[type='checkbox']").prop('checked', (temp == 'black'));
+    });
+
+       $(document).on("click", '#save-btn', function(){
+        if(temp == 'black'){
+        	$('.kiri').css("background-color","pink");
+        	$('.kiri').css("color","black");
+        	$('nav').css("background-color", "black");
+        	$('nav').css("color","black");
+        	$('.kanan').css("background-color","#d6e0f0");
+        	$('.kanan').css("color","black");
+        	$('header').css("background-color","aqua");
+        	$('header').css("color","black");
+        	$('.tengah').css("background-color","white");
+        	$('.tengah').css("color","black");
+        	$('footer').css("background-color","chartreuse");
+        	$('footer').css("color","black");
+            temp = 'white';
+        }else{
+        	$('.kiri').css("background-color","black");
+        	$('.kiri').css("color","white");
+        	$('nav').css("background-color", "black");
+        	$('nav').css("color","white");
+        	$('.kanan').css("background-color","black");
+        	$('.kanan').css("color","white");
+        	$('header').css("background-color","black");
+        	$('header').css("color","white");
+        	$('.tengah').css("background-color","black");
+        	$('.tengah').css("color","white");
+        	$('footer').css("background-color","black");
+        	$('footer').css("color","white");
+            temp = 'black';
+        }
+        $('body').css("background-color", temp);
+        
+        
+
+        createCookie('name', temp, 5);
+    });
+	</script>
+</head>
+<body bgcolor="lightblue">
+	<header>
+		<img class="logo" src="C:\xampp\htdocs\Ana\1\logo234.jpg" alt="logo">
+		<h2 class="judul">GAMING SPOT</h2>
+		<nav>
+			<h4>Profil</h4>
+		</nav>
+		<label class="switch" id="save-btn">
+                <input type="checkbox" >
+                <span class="slider round"></span>
+	</header>
+	
+	<div class="kiri">
+		<h2>Kategori game:</h2>
+		<ul>
+			<li>Valorant</li>
+            <li>Dota</li>
+            <li>PUBG</li>
+            <li>Leage Of Legends : Wild Rift</li>
+            <li>Mobile Legend : Bang Bang</li>
+		</ul>
+	</div>
+	<div class="kanan">
+		<form>
+			<input class="search" type="text" placeholder="Cari..." required>	
+			<input class="button" type="button" value="Cari">
+		</form>
+		<h2>Berita Populer</h2>
+		<ol>
+			<li>Nigma berangkat tanpa MinD_ContRol ke Singapore Major?</li>
+            <li>JerAx kembali ke dunia Dota 2?</li>
+            <li>TenZ gantikan posisi Sinatraa dalam Tim Sentinels?</li>
+			
+		</ol>
+	</div>
+	<div class="tengah" align="center">
+		<h4 >Indentitas</h4>
+		<img class="gambartengah" src="C:\xampp\htdocs\Ana\2\fotoku.jpg">
+		<p>	Nama  : Mochammad Raffli Maulana </p>
+		<p> NIM   : 201910370311431  </p>	
+		<p>	TTL   : Pasuruan,9 September 2001 </p>
+		<p>	Hobby : Tidur </p>
+		<p>	Motto : Kerja tak mau, usaha tak mau. Tapi kalau membuat status "semua akan indah pada waktunya"/n
+                    Hey keong racun! Bangun! Bangun! Tidurmu terlalu miring </p>
+		<p>	Sekolah: Universitas Muhammadiyah Malang </p>
+	</div>
+
+	
+	<footer>
+		<h5><marquee><img  src="345-3455044_msc-rrq-rrq-logo-png-transparent-png.png" style="width:30px;height:25px;">&copy 2021, by Raffli "Ana" Maulana <img  src="evos-logo-4E36605F29-seeklogo.com.png" style="width:30px;height:30px;"></marquee></h5>
+	</footer>
+</body>
+</html>
